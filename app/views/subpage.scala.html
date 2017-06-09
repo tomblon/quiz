@@ -1,0 +1,14 @@
+@main("Welcome to Play") {
+
+@*
+* Get an `Html` object by calling the built-in Play welcome
+* template and passing a `String` message.
+*@
+
+
+<form action="@routes.HomeController.checkAnswer(1)" method="post">
+     <input name="answerCode" type="text">
+    <button>accept answer</button>
+</form>
+
+}

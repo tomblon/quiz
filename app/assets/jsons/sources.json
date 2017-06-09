@@ -1,0 +1,18 @@
+{
+  "1": {
+    "question": "how many bytes are in kilobyte?",
+    "a": "1024",
+    "b": "512",
+    "c": "128",
+    "d": "1000",
+    "answer": "a"
+  },
+  "2": {
+    "question": "what is play?",
+    "a": "library",
+    "b": "framework",
+    "c": "method",
+    "d": "application",
+    "answer": "b"
+  }
+}
