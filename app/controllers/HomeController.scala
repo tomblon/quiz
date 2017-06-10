@@ -19,6 +19,7 @@ import scala.io.Source
 class HomeController @Inject() extends Controller {
 
   var counter=0
+  var questionsNumber=0
 
   /**
     * Create an Action to render an HTML page with a welcome message.
@@ -26,13 +27,13 @@ class HomeController @Inject() extends Controller {
     * will be called when the application receives a `GET` request with
     * a path of `/`.
     */
-  def lolfn(n:Int) = Action {
+  def printQuestion(n:Int) = Action {
     try {
       val entity: QA = new QA(n)
       Ok(views.html.subpage(n, entity.question + "  " + entity.a + "  " + entity.b + "  " + entity.c + "  " + entity.d))
     }
     catch{
-      case ex:NoSuchElementException => Ok(views.html.end(counter))
+      case ex:NoSuchElementException => Ok(views.html.end("Your score:"+counter+"/"+questionsNumber))
     }
   }
 
@@ -44,17 +45,20 @@ class HomeController @Inject() extends Controller {
   )
 
   def checkAnswer(n:Int)=Action {implicit request =>
+    questionsNumber+=1
     val entity:QA=new QA(n)
     val answer=form.bindFromRequest().get
     if (answer.answerCode==entity.answer) {
         counter+=1
-        Ok("good answer" + counter)
+        //Ok("good answer" + counter)
     }
-    Redirect(routes.HomeController.lolfn(n+1))
+    Redirect(routes.HomeController.printQuestion(n+1))
   }
 
 
   def index() = Action {
+    counter=0
+    questionsNumber=0
     Ok(views.html.index("start quiz"))
   }
 }

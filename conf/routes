@@ -10,7 +10,7 @@ GET     /count                      controllers.CountController.count
 GET     /message                    controllers.AsyncController.message
 
 
-GET     /:n                        controllers.HomeController.lolfn(n:Int)
+GET     /:n                        controllers.HomeController.printQuestion(n:Int)
 POST    /tempcheck                   controllers.HomeController.checkAnswer(n:Int)
 
 # Map static resources from the /public folder to the /assets URL path
