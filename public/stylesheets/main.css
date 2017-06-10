@@ -1,21 +1,26 @@
 
 /*body {margin:10em 10em 10em 10em;}*/
 
+.container {
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
 /*// NAVBAR ################################################*/
 .navigation-bar {
-    overflow: hidden;
     background-color: #333;
-    margin: 10% 10% 10% 10%;
+    text-align: center;
+    width: 100%;
 }
 
 .navigation-bar a {
-    float: left;
-    display: block;
+    list-style-type: none;
     color: #f2f2f2;
     text-align: center;
     padding: 1em 2em;
     text-decoration: none;
     font-size: 1.5em;
+    display: inline-block;
 }
 
 .navigation-bar a:hover {
@@ -30,8 +35,11 @@
 
 /*// HOME ################################################*/
 
+
+
 .button {
     background-color: #4CAF50; /* Green */
+    margin-top: 2em;
     border: none;
     color: white;
     padding: 1em 1em;
