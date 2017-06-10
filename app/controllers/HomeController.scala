@@ -27,9 +27,13 @@ class HomeController @Inject() extends Controller {
     * a path of `/`.
     */
   def lolfn(n:Int) = Action {
-
-    val entity:QA=new QA(n)
-    Ok(views.html.subpage(n+1,entity.question+"  "+entity.a+"  "+entity.b+"  "+entity.c+"  "+entity.d))
+    try {
+      val entity: QA = new QA(n)
+      Ok(views.html.subpage(n, entity.question + "  " + entity.a + "  " + entity.b + "  " + entity.c + "  " + entity.d))
+    }
+    catch{
+      case ex:NoSuchElementException => Ok(views.html.end(counter))
+    }
   }
 
 
@@ -46,7 +50,7 @@ class HomeController @Inject() extends Controller {
         counter+=1
         Ok("good answer" + counter)
     }
-    Redirect(routes.HomeController.lolfn(n))
+    Redirect(routes.HomeController.lolfn(n+1))
   }
 
 
