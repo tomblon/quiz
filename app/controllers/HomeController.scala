@@ -42,10 +42,10 @@ class HomeController @Inject() extends Controller {
   def checkAnswer(n:Int)=Action {implicit request =>
     val entity:QA=new QA(n)
     val answer=form.bindFromRequest().get
-    if (answer.answerCode==entity.answer)
-     Ok("good answer"+counter)
-    else
-      Ok("wrong answer")
+    if (answer.answerCode==entity.answer) {
+        counter+=1
+        Ok("good answer" + counter)
+    }
     Redirect(routes.HomeController.lolfn(n))
   }
 
