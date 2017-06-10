@@ -18,7 +18,7 @@ import scala.io.Source
 @Singleton
 class HomeController @Inject() extends Controller {
 
-  val counter=1
+  var counter=0
 
   /**
     * Create an Action to render an HTML page with a welcome message.
@@ -26,11 +26,10 @@ class HomeController @Inject() extends Controller {
     * will be called when the application receives a `GET` request with
     * a path of `/`.
     */
-  def lolfn() = Action {
+  def lolfn(n:Int) = Action {
 
-    val entity:QA=new QA(1)
-    checkAnswer(1)
-    Ok(entity.question+"\n"+entity.a+" "+entity.b+" "+entity.c+" "+entity.d)
+    val entity:QA=new QA(n)
+    Ok(views.html.subpage(n+1,entity.question+"  "+entity.a+"  "+entity.b+"  "+entity.c+"  "+entity.d))
   }
 
 
@@ -41,20 +40,17 @@ class HomeController @Inject() extends Controller {
   )
 
   def checkAnswer(n:Int)=Action {implicit request =>
+    val entity:QA=new QA(n)
     val answer=form.bindFromRequest().get
-    // Ok(answer.answerCode)
-    Redirect(routes.HomeController.checkAnswer(n+1))
+    if (answer.answerCode==entity.answer)
+     Ok("good answer"+counter)
+    else
+      Ok("wrong answer")
+    Redirect(routes.HomeController.lolfn(n))
   }
-/*
-  def subpage_handler() = Action{
-    Ok(views.html.subpage())
-  }
-*/
+
 
   def index() = Action {
-    Ok(views.html.index("Your new application is ready."))
-
-
+    Ok(views.html.index("start quiz"))
   }
-
 }

@@ -4,7 +4,7 @@ import play.api.libs.json.{JsValue, Json}
 
 import scala.io.Source
 
-case class QA(num:Int) {
+class QA(num:Int) {
   val source: String = Source.fromFile("app/assets/jsons/sources.json").getLines.mkString
   val json: JsValue = Json.parse(source)
   val question=(json \ num.toString \ "question").get.as[String]

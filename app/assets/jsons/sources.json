@@ -1,18 +1,26 @@
 {
   "1": {
     "question": "how many bytes are in kilobyte?",
-    "a": "1024",
-    "b": "512",
-    "c": "128",
-    "d": "1000",
+    "a": "a)1024",
+    "b": "b)512",
+    "c": "c)128",
+    "d": "d)1000",
     "answer": "a"
   },
   "2": {
     "question": "what is play?",
-    "a": "library",
-    "b": "framework",
-    "c": "method",
-    "d": "application",
+    "a": "a)library",
+    "b": "b)framework",
+    "c": "c)method",
+    "d": "d)application",
     "answer": "b"
+  },
+  "3": {
+    "question": "what is love?",
+    "a": "a)dunno",
+    "b": "b)under my umbrella",
+    "c": "c)baby don't hurt me",
+    "d": "d)mom's spagetti",
+    "answer": "c"
   }
 }

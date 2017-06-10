@@ -1,3 +1,6 @@
+@(number:Int,message: String)
+
+
 @main("Welcome to Play") {
 
 @*
@@ -5,8 +8,9 @@
 * template and passing a `String` message.
 *@
 
+@message
 
-<form action="@routes.HomeController.checkAnswer(1)" method="post">
+<form action="@routes.HomeController.checkAnswer(number)" method="post">
      <input name="answerCode" type="text">
     <button>accept answer</button>
 </form>
