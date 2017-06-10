@@ -1,22 +1,24 @@
 
-/*body {margin:10em 10em 10em 10em;}*/
+body {
+    background-color: rgba(210, 208, 255, 0.78);
+}
 
 .container {
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
+    width: 70%;
+    margin: auto;
+
 }
 
 /*// NAVBAR ################################################*/
 .navigation-bar {
     background-color: #333;
-    text-align: center;
-    width: 100%;
+    border-radius: 0.3em;
 }
 
 .navigation-bar a {
     list-style-type: none;
+    border-radius: 0.3em;
     color: #f2f2f2;
-    text-align: center;
     padding: 1em 2em;
     text-decoration: none;
     font-size: 1.5em;
@@ -24,7 +26,7 @@
 }
 
 .navigation-bar a:hover {
-    background-color: green;
+    background-color: #806774;
     color: black;
 }
 

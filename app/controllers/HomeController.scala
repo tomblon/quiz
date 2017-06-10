@@ -59,6 +59,6 @@ class HomeController @Inject() extends Controller {
   def index() = Action {
     counter=0
     questionsNumber=0
-    Ok(views.html.index("start quiz"))
+    Ok(views.html.index("Start quiz"))
   }
 }
