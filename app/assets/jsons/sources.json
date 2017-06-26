@@ -1,6 +1,6 @@
 {
   "1": {
-    "question": "how many bytes are in kilobyte?",
+    "question": "How many bytes are in kilobyte?",
     "a": "a)1024",
     "b": "b)512",
     "c": "c)128",
@@ -8,7 +8,7 @@
     "answer": "a"
   },
   "2": {
-    "question": "what is play?",
+    "question": "What is play?",
     "a": "a)library",
     "b": "b)framework",
     "c": "c)method",
@@ -16,7 +16,7 @@
     "answer": "b"
   },
   "3": {
-    "question": "what is love?",
+    "question": "What is love?",
     "a": "a)dunno",
     "b": "b)under my umbrella",
     "c": "c)baby don't hurt me",

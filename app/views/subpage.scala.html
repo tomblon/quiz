@@ -1,4 +1,4 @@
-@(number:Int,message: String)
+@(number: Int, question: String, a: String, b: String, c:String, d:String)
 
 
 @main("Welcome to Play") {
@@ -8,11 +8,16 @@
 * template and passing a `String` message.
 *@
 
-@message
-
-<form action="@routes.HomeController.checkAnswer(number)" method="post">
-     <input name="answerCode" type="text">
-    <button>Submit</button>
-</form>
+    <div class="question">
+        <h3>@question</h3>
+        <p>@a</p>
+        <p>@b</p>
+        <p>@c</p>
+        <p>@d</p>
+        <form action="@routes.HomeController.checkAnswer(number)" method="post">
+            <input name="answerCode" type="text">
+            <button>Submit</button>
+        </form>
+    </div>
 
 }

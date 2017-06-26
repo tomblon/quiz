@@ -30,13 +30,12 @@ class HomeController @Inject() extends Controller {
   def printQuestion(n:Int) = Action {
     try {
       val entity: QA = new QA(n)
-      Ok(views.html.subpage(n, entity.question + "  " + entity.a + "  " + entity.b + "  " + entity.c + "  " + entity.d))
+      Ok(views.html.subpage(n, entity.question, entity.a, entity.b, entity.c ,entity.d))
     }
     catch{
       case ex:NoSuchElementException => Ok(views.html.end("Your score:"+counter+"/"+questionsNumber))
     }
   }
-
 
   val form:Form[Answer]=Form(
     mapping(
@@ -54,7 +53,6 @@ class HomeController @Inject() extends Controller {
     }
     Redirect(routes.HomeController.printQuestion(n+1))
   }
-
 
   def index() = Action {
     counter=0
