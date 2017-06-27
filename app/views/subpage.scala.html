@@ -9,11 +9,11 @@
 *@
 
     <div class="question">
-        <h3>@question</h3>
-        <p>@a</p>
-        <p>@b</p>
-        <p>@c</p>
-        <p>@d</p>
+        <h3 >@question</h3>
+        <p><a href="@routes.HomeController.checkAnswerOnClick(number, "a")">@a</a></p>
+        <p><a href="@routes.HomeController.checkAnswerOnClick(number, "b")">@b</a></p>
+        <p><a href="@routes.HomeController.checkAnswerOnClick(number, "c")">@c</a></p>
+        <p><a href="@routes.HomeController.checkAnswerOnClick(number, "d")">@d</a></p>
         <form action="@routes.HomeController.checkAnswer(number)" method="post">
             <input name="answerCode" type="text">
             <button>Submit</button>

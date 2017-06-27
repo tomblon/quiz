@@ -54,6 +54,16 @@ class HomeController @Inject() extends Controller {
     Redirect(routes.HomeController.printQuestion(n+1))
   }
 
+  def checkAnswerOnClick(n:Int, answer: String )=Action {implicit request =>
+    questionsNumber+=1
+    val entity:QA=new QA(n)
+    if (answer == entity.answer) {
+      counter+=1
+      //Ok("good answer" + counter)
+    }
+    Redirect(routes.HomeController.printQuestion(n+1))
+  }
+
   def index() = Action {
     counter=0
     questionsNumber=0

@@ -1,6 +1,7 @@
 
 body {
-    background-color: rgba(220, 221, 255, 0.78);
+    background-color: rgba(249, 255, 230, 0.78);
+    padding: 1em;
 }
 
 .container {
@@ -17,18 +18,21 @@ body {
 }
 
 .navigation-bar a {
-    list-style-type: none;
-    border-radius: 0.5em;
     color: #f2f2f2;
-    padding: 1em 2em;
+    padding: 0.9em 1.8em;
+    border-radius: 0.5em;
+    border: solid #333;
     text-decoration: none;
     font-size: 1.5em;
     display: inline-block;
 }
 
 .navigation-bar a:hover {
-    background-color: #806774;
+    background-color: #eeeeee;
     color: black;
+    border-radius: 0.5em;
+    border: solid black;
+
 }
 
 /*.navigation-bar a.active {*/
@@ -79,4 +83,18 @@ body {
     text-align: center;
 
 }
+
+p a {
+    text-decoration: none;
+    color: black;
+    padding: 0.5em 0.2em 0.5em 0.2em;
+}
+
+p a:hover {
+    color: black;
+    border: solid black;
+    border-radius: 0.2em;
+    padding: 0.5em 0.5em 0.5em 0.2em;
+}
+
 
