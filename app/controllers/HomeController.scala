@@ -64,6 +64,12 @@ class HomeController @Inject() extends Controller {
     Redirect(routes.HomeController.printQuestion(n+1))
   }
 
+  def about()=Action {implicit request =>
+    counter=0
+    questionsNumber=0
+    Ok(views.html.about("To jest quiz webowy i jeśli masz propozycje dodania nowych pytań, skontaktuj sie z administratorami."))
+  }
+
   def index() = Action {
     counter=0
     questionsNumber=0

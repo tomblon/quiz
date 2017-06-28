@@ -5,11 +5,8 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 GET     /check                      controllers.HomeController.checkAnswerOnClick(n:Int, char: String)
+GET     /about                      controllers.HomeController.about
 # An example controller showing how to use dependency injection
-GET     /count                      controllers.CountController.count
-# An example controller showing how to write asynchronous code
-GET     /message                    controllers.AsyncController.message
-
 
 GET     /:n                        controllers.HomeController.printQuestion(n:Int)
 POST    /tempcheck                   controllers.HomeController.checkAnswer(n:Int)
