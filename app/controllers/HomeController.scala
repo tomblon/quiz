@@ -49,7 +49,6 @@ class HomeController @Inject() extends Controller {
     val answer=form.bindFromRequest().get
     if (answer.answerCode==entity.answer) {
         counter+=1
-        //Ok("good answer" + counter)
     }
     Redirect(routes.HomeController.printQuestion(n+1))
   }
@@ -59,7 +58,6 @@ class HomeController @Inject() extends Controller {
     val entity:QA=new QA(n)
     if (answer == entity.answer) {
       counter+=1
-      //Ok("good answer" + counter)
     }
     Redirect(routes.HomeController.printQuestion(n+1))
   }
@@ -67,7 +65,7 @@ class HomeController @Inject() extends Controller {
   def about()=Action {implicit request =>
     counter=0
     questionsNumber=0
-    Ok(views.html.about("To jest quiz webowy i jeśli masz propozycje dodania nowych pytań, skontaktuj sie z administratorami."))
+    Ok(views.html.about("To jest quiz webowy. Jeśli masz propozycje dodania nowych pytań, skontaktuj sie z administratorami."))
   }
 
   def index() = Action {
